@@ -1,0 +1,10 @@
+Goal, Command, Example
+Getting Help, nmap -h, nmap -h
+Display Nmap Version, nmap -V, nmap -V
+Verbose Output, nmap -v [target], nmap -v 192.168.0.1
+Debugging, nmap -d [target], nmap -d 192.168.0.1
+Display Port State Reason, nmap –reason [target], nmap –reason 192.168.0.1
+Only Display Open Ports, nmap –open [target], nmap –open 192.168.0.1
+Trace Packets, nmap –packet-trace [target], nmap –packet-trace 192.168.0.1
+Display Host Networking, nmap –iflist, nmap –iflist
+Specify a Network Interface, nmap -e [interface] [target], nmap -e eth0 192.168.0.1
