@@ -1,0 +1,16 @@
+# WHOIS enumeration
+whois domain.com 
+
+# Perform DNS IP Lookup
+dig a domain.com @nameserver 
+
+# Perform MX Record Lookup
+dig mx domain.com @nameserver
+
+# Perform Zone Transfer with DIG
+dig axfr domain.com @nameserver
+
+# DNS Zone Transfers
+nslookup -> set type=any -> ls -d example.com
+dig axfr blah.com @ns.example.com
+
