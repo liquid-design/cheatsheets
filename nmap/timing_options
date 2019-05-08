@@ -1,0 +1,16 @@
+Goal, Command, Example
+Timing Templates, nmap -T[0-5] [target], nmap -T3 192.168.0.1
+Set the Packet TTL, nmap –ttl [time] [target], nmap –ttl 64 192.168.0.1
+Minimum # of Parallel Operations, nmap –min-parallelism [number] [target], nmap –min-parallelism 10 192.168.0.1
+Maximum # of Parallel Operations, nmap –max-parallelism [number] [target], nmap –max-parallelism 1 192.168.0.1
+Minimum Host Group Size, nmap –min-hostgroup [number] [targets], nmap –min-hostgroup 50 192.168.0.1
+Maximum Host Group Size, nmap –max-hostgroup [number] [targets], nmap –max-hostgroup 1 192.168.0.1
+Maximum RTT Timeout, nmap –initial-rtt-timeout [time] [target], nmap –initial-rtt-timeout 100ms 192.168.0.1
+Initial RTT Timeout, nmap –max-rtt-timeout [TTL] [target], nmap –max-rtt-timeout 100ms 192.168.0.1
+Maximum Retries, nmap –max-retries [number] [target], nmap –max-retries 10 192.168.0.1
+Host Timeout, nmap –host-timeout [time] [target], nmap –host-timeout 30m 192.168.0.1
+Minimum Scan Delay, nmap –scan-delay [time] [target], nmap –scan-delay 1s 192.168.0.1
+Maximum Scan Delay, nmap –max-scan-delay [time] [target], nmap –max-scan-delay 10s 192.168.0.1
+Minimum Packet Rate, nmap –min-rate [number] [target], nmap –min-rate 50 192.168.0.1
+Maximum Packet Rate, nmap –max-rate [number] [target], nmap –max-rate 100 192.168.0.1
+Defeat Reset Rate Limits, nmap –defeat-rst-ratelimit [target], nmap –defeat-rst-ratelimit 192.168.0.1
