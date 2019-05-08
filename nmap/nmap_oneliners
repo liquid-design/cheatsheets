@@ -1,0 +1,2 @@
+# Create Clean IP List
+nmap -sL -n 192.168.1.1-100,102-254 | grep "report for" | cut -d " " -f 5 > ip_list_192.168.1.txt
