@@ -1,0 +1,18 @@
+Goal, Command, Example
+Perform a Ping Only Scan, nmap -sP [target], nmap -sP 192.168.0.1
+Don’t Ping, nmap -PN [target], nmap -PN 192.168.0.1
+TCP SYN Ping, nmap -PS [target], nmap -PS 192.168.0.1
+TCP ACK Ping, nmap -PA [target], nmap -PA 192.168.0.1
+UDP Ping, nmap -PU [target], nmap -PU 192.168.0.1
+SCTP INIT Ping, nmap -PY [target], nmap -PY 192.168.0.1
+ICMP Echo Ping, nmap -PE [target], nmap -PE 192.168.0.1
+ICMP Timestamp Ping, nmap -PP [target], nmap -PP 192.168.0.1
+ICMP Address Mask Ping, nmap -PM [target], nmap -PM 192.168.0.1
+IP Protocol Ping, nmap -PO [target], nmap -PO 192.168.0.1
+ARP Ping, nmap -PR [target], nmap -PR 192.168.0.1
+Traceroute, nmap –traceroute [target], nmap –traceroute 192.168.0.1
+Force Reverse DNS Resolution, nmap -R [target], nmap -R 192.168.0.1
+Disable Reverse DNS Resolution, nmap -n [target], nmap -n 192.168.0.1
+Alternative DNS Lookup, nmap –system-dns [target], nmap –system-dns 192.168.0.1
+Manually Specify DNS Server(s), nmap –dns-servers [servers] [target], nmap –dns-servers 201.56.212.54 192.168.0.1
+Create a Host List, nmap -sL [targets], nmap -sL 192.168.0.1/24
