@@ -1,0 +1,12 @@
+Goal, Command, Example
+TCP SYN Scan, nmap -sS [target], nmap -sS 192.168.0.1
+TCP Connect Scan, nmap -sT [target], nmap -sT 192.168.0.1
+UDP Scan, nmap -sU [target], nmap -sU 192.168.0.1
+TCP NULL Scan, nmap -sN [target], nmap -sN 192.168.0.1
+TCP FIN Scan, nmap -sF [target], nmap -sF 192.168.0.1
+Xmas Scan, nmap -sX [target], nmap -sX 192.168.0.1
+TCP ACK Scan, nmap -sA [target], nmap -sA 192.168.0.1
+Custom TCP Scan, nmap –scanflags [flags] [target], nmap –scanflags SYNFIN 192.168.0.1
+IP Protocol Scan, nmap -sO [target], nmap -sO 192.168.0.1
+Send Raw Ethernet Packets, nmap –send-eth [target], nmap –send-eth 192.168.0.1
+Send IP Packets, nmap –send-ip [target], nmap –send-ip 192.168.0.1
