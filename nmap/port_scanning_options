@@ -1,0 +1,8 @@
+Goal, Command, Example
+Perform a Fast Scan, nmap -F [target], nmap -F 192.168.0.1
+Scan Specific Ports, nmap -p [port(s)] [target], nmap -p 21-25,80,139,8080 192.168.1.1
+Scan Ports by Name, nmap -p [port name(s)] [target], nmap -p ftp,http* 192.168.0.1
+Scan Ports by Protocol, nmap -sU -sT -p U:[ports],T:[ports] [target], nmap -sU -sT -p U:53,111,137,T:21-25,80,139,8080 192.168.0.1
+Scan All Ports, nmap -p ‘*’ [target], nmap -p ‘*’ 192.168.0.1
+Scan Top Ports, nmap –top-ports [number] [target], nmap –top-ports 10 192.168.0.1
+Perform a Sequential Port Scan, nmap -r [target], nmap -r 192.168.0.1
