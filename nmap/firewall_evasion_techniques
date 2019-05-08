@@ -1,0 +1,10 @@
+Goal, Command, Example
+Fragment Packets, nmap -f [target], nmap -f 192.168.0.1
+Specify a Specific MTU, nmap –mtu [MTU] [target], nmap –mtu 32 192.168.0.1
+Use a Decoy, nmap -D RND:[number] [target], nmap -D RND:10 192.168.0.1
+Idle Zombie Scan, nmap -sI [zombie] [target], nmap -sI 192.168.0.38 192.168.0.1
+Manually Specify a Source Port, nmap –source-port [port] [target], nmap –source-port 1025 192.168.0.1
+Append Random Data, nmap –data-length [size] [target], nmap –data-length 20 192.168.0.1
+Randomize Target Scan Order, nmap –randomize-hosts [target], nmap –randomize-hosts 192.168.0.1-20
+Spoof MAC Address, nmap –spoof-mac [MAC|0|vendor] [target], nmap –spoof-mac Cisco 192.168.0.1
+Send Bad Checksums, nmap –badsum [target], nmap –badsum 192.168.0.1
