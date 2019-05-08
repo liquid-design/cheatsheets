@@ -1,0 +1,6 @@
+Goal, Command, Example
+Operating System Detection, nmap -O [target], nmap -O 192.168.0.1
+Attempt to Guess an Unknown OS, nmap -O –osscan-guess [target], nmap -O –osscan-guess 192.168.0.1
+Service Version Detection, nmap -sV [target], nmap -sV 192.168.0.1
+Troubleshooting Version Scans, nmap -sV –version-trace [target], nmap -sV –version-trace 192.168.0.1
+Perform a RPC Scan, nmap -sR [target], nmap -sR 192.168.0.1
