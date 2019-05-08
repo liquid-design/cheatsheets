@@ -1,0 +1,3 @@
+# dnsrecon – A powerful DNS enumeration script
+dnsrecon -d example.com -D /usr/share/wordlists/dnsmap.txt -t std --xml dnsrecon.xml
+
