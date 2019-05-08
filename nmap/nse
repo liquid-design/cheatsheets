@@ -1,0 +1,7 @@
+Goal, Command, Example
+Execute Individual Scripts, nmap –script [script.nse] [target], nmap –script banner.nse 192.168.0.1
+Execute Multiple Scripts, nmap –script [expression] [target], nmap –script ‘http-*’ 192.168.0.1
+Execute Scripts by Category, nmap –script [category] [target], nmap –script 'not intrusive' 192.168.0.1
+Execute Multiple Script Categories, nmap –script [category1,category2,etc], nmap –script 'default or safe' 192.168.0.1
+Troubleshoot Scripts, nmap –script [script] –script-trace [target], nmap –script banner.nse –script-trace 192.168.0.1
+Update the Script Database, nmap –script-updatedb, nmap –script-updatedb
