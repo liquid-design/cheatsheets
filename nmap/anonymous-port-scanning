@@ -1,0 +1,73 @@
+Tor
+Install Tor from the standard repositories:
+$ sudo apt-get install tor
+
+Nmap
+$ sudo apt-get install nmap
+
+ProxyChains
+$ sudo apt-get install proxychains
+ProxyChains is already configured to use Tor by default.
+
+You can verify this by looking up /etc/proxychains.conf.
+
+The last lines should be like these:
+
+[ProxyList]
+# add proxy here ...
+# meanwile
+# defaults set to "tor"
+socks4 127.0.0.1 9050
+Anonymous Port Scanning Through Tor
+Run the following command to perform an anonymous Nmap scanning through Tor network:
+
+$ proxychains nmap -sT -PN -n -sV -p 80,443,21,22 217.xx.xx.xx
+ProxyChains-3.1 (http://proxychains.sf.net)
+
+Starting Nmap 6.00 ( http://nmap.org ) at 2014-03-24 17:34 EET
+|S-chain|-<>-127.0.0.1:9050-<><>-217.xx.xx.xx:443-<><>-OK
+|S-chain|-<>-127.0.0.1:9050-<><>-217.xx.xx.xx:21-<><>-OK
+|S-chain|-<>-127.0.0.1:9050-<><>-217.xx.xx.xx:80-<><>-OK
+|S-chain|-<>-127.0.0.1:9050-<><>-217.xx.xx.xx:22-<--denied
+
+Nmap scan report for 217.xx.xx.xx
+Host is up (0.14s latency).
+PORT    STATE  SERVICE  VERSION
+21/tcp  open   ftp      Pure-FTPd
+22/tcp  closed ssh
+80/tcp  open   http     Apache httpd 2.2.26 ((CentOS))
+443/tcp open   ssl/http Apache httpd 2.2.26 ((CentOS))
+In the scan log we can see the ‘chain’ that goes from Tor-proxy (127.0.0.1:9050) to our scanned host (217.xx.xx.xx).
+
+Nmap Through Tor: Get Round Blocked Endpoints
+It is possible that we will encounter a situation where scan fails, because Tor endpoints are blocked.
+
+The solution may be in adding common public proxy server to the ‘chain’.
+
+We can do that by simply editing the /etc/proxychains.conf and adding a new entry at the end of the [ProxyList] (be sure that random_chain option is disabled).
+
+[ProxyList]
+# add proxy here ...
+# meanwile
+# defaults set to "tor"
+socks4  127.0.0.1 9050
+socks4 115.71.237.212 1080
+The new ‘chain’ goes through the Tor-proxy (127.0.0.1:9050) to some public proxy server (115.71.237.212:1080) and then to our scanned host (217.xx.xx.xx).
+
+$ proxychains nmap -sT -PN -n -sV -p 21 217.xx.xx.xx
+ProxyChains-3.1 (http://proxychains.sf.net)
+
+Starting Nmap 6.00 ( http://nmap.org ) at 2014-03-25 11:05 EET
+|S-chain|-<>-127.0.0.1:9050-<>-115.71.237.212:1080-<><>-217.xx.xx.xx:21-<><>-OK
+|S-chain|-<>-127.0.0.1:9050-<>-115.71.237.212:1080-<><>-217.xx.xx.xx:21-<><>-OK
+Nmap scan report for 217.xx.xx.xx
+Host is up (1.2s latency).
+PORT   STATE SERVICE VERSION
+21/tcp open  ftp     Pure-FTPd
+
+## Lists of Free Public Proxy Servers
+Hide My Ass
+Proxy Server List
+Anonymous Public Proxy Servers
+Daily HTTP Proxies
+Valid-Proxy.com
