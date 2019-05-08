@@ -1,0 +1,7 @@
+Goal, Command, Example
+Save Output to a Text File, nmap -oN [scan.txt] [target], nmap -oN scan.txt 192.168.0.1
+Save Output to a XML File, nmap -oX [scan.xml] [target], nmap -oX scan.xml 192.168.0.1
+Grepable Output, nmap -oG [scan.txt] [targets], nmap -oG scan.txt 192.168.0.1
+Output All Supported File Types, nmap -oA [path/filename] [target], nmap -oA ./scan 192.168.0.1
+Periodically Display Statistics, nmap –stats-every [time] [target], nmap –stats-every 10s 192.168.0.1
+133t Output, nmap -oS [scan.txt] [target], nmap -oS scan.txt 192.168.0.1
